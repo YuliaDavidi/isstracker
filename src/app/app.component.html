@@ -8,7 +8,7 @@
             <div class="p-2"><h4>Current location</h4></div>
             <div class="flex-fill p-2" *ngIf="location">
                 <p>Lat : {{location.latitude}}, Lon : {{location.longitude}}</p>
-                <p>Time :{{location.date}}</p>
+                <p>Time :{{location.date| date:'YYYY-MM-dd hh:mm:ss'}}</p>
             </div>
             <div>
                 <p-tabMenu [model]="tabs" [activeItem]="activeItem"></p-tabMenu>

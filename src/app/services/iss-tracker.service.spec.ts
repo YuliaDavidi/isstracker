@@ -28,7 +28,7 @@ describe('IssTrackerService', () => {
     httpTestingController.verify();
   });
 
-  it('#trackLoaction should use GET to retrieve data',() => {
+  it('trackLoaction should use GET to retrieve data',() => {
     service.trackLoaction().subscribe();
 
     const testRequest = httpTestingController.expectOne({ method: 'GET', url: service.API_URL });
@@ -36,7 +36,7 @@ describe('IssTrackerService', () => {
     expect(testRequest.request.method).toEqual('GET');
   });
 
-  it('#trackLoaction should return expected data', (done) => {
+  it('trackLoaction should return expected data', (done) => {
     const sourceData = {
       timestamp: 1627384866,
       message: "success",
@@ -50,7 +50,7 @@ describe('IssTrackerService', () => {
       longitude: 1,
       latitude: 1,
       name: '',
-      date: moment(sourceData.timestamp).toDate()
+      date: moment.unix(sourceData.timestamp).toDate()
     };
 
     service.trackLoaction().subscribe(data => {

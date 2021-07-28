@@ -29,7 +29,7 @@ export class IssTrackerService {
       location.name='';
       location.latitude = +res.iss_position.latitude;       
       location.longitude = +res.iss_position.longitude;
-      location.date= moment(+res.timestamp).toDate();
+      location.date= moment.unix(+res.timestamp).toDate();
       this.currentLocation.next(location);
       return location;
     }), 

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { select, Store } from '@ngrx/store';
@@ -13,7 +13,8 @@ import { selectLocations, selectSavedLocations } from '../state/locations.select
 @Component({
   selector: 'app-saved-locations',
   templateUrl: './saved-locations.component.html',
-  styleUrls: ['./saved-locations.component.scss']
+  styleUrls: ['./saved-locations.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SavedLocationsComponent implements OnInit, OnDestroy , AfterViewInit{
   public loadSelectedLocationsTest() {
@@ -75,8 +76,6 @@ export class SavedLocationsComponent implements OnInit, OnDestroy , AfterViewIni
     this.zoomedLocation=location;
     this.route.navigate(['map',{location:location.name}])
    }
-     
-      
   }
 
   deleteLocation(name:string){
