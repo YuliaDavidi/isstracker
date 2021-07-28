@@ -26,8 +26,9 @@ export class AppComponent {
       {label: 'Report', icon: 'pi pi-fw pi-table', routerLink: ['report']},
      
   ];
-  this.subscriptions.currentLocation=this.issTrackerService.currentLocation$.subscribe((location) => {
-    this.location = location;
+  this.subscriptions.currentLocation=this.issTrackerService.currentLocation$.subscribe(
+    (location) => {
+      this.location = location;
   });
   
   }
