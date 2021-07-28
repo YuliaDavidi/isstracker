@@ -1,0 +1,25 @@
+
+<agm-map #myMap [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+  <agm-marker *ngIf="location" [latitude]="location.latitude" [longitude]="location.longitude" title="ISS is here">
+    <agm-info-window>You're here</agm-info-window>
+  </agm-marker>
+  <agm-marker *ngIf="zoomedLocation" [latitude]="zoomedLocation.latitude" [longitude]="zoomedLocation.longitude" [title]="zoomedLocation.name">
+    <agm-info-window>Zoom</agm-info-window>
+  </agm-marker>
+</agm-map>
+<button (click)="openSaveLocationDialog()" data-test="add-button" pButton pRipple type="button" icon="pi pi-plus"
+  class="p-button-rounded float-button"></button>
+
+<p-dialog header="" [(visible)]="displayDialog">
+  <form #heroForm="ngForm">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Location Name</label>
+      <input type="text" class="form-control" name="name" id="locationName" [(ngModel)]="selectedLocation.name"
+        pInputText autofocus placeholder="unique location name">
+    </div>
+  </form>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="saveLocation(selectedLocation)" label="save" styleClass="p-button-text">
+    </p-button>
+  </ng-template>
+</p-dialog>
