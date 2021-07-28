@@ -1,6 +1,6 @@
 
 <agm-map #myMap [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-  <agm-marker *ngIf="location" [latitude]="location.latitude" [longitude]="location.longitude" title="ISS is here">
+  <agm-marker iconUrl="assets\sat.png" *ngIf="location" [latitude]="location.latitude" [longitude]="location.longitude" title="ISS is here">
     <agm-info-window>You're here</agm-info-window>
   </agm-marker>
   <agm-marker *ngIf="zoomedLocation" [latitude]="zoomedLocation.latitude" [longitude]="zoomedLocation.longitude" [title]="zoomedLocation.name">

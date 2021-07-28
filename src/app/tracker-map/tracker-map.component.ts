@@ -20,13 +20,13 @@ import { poll } from '../core/poll.operator';
 
 export class TrackerMapComponent implements OnInit, OnDestroy {
   @ViewChild(AgmMap) myMap: AgmMap | undefined;
-  lat: number = 51.678418;
-  lng: number = 50  ;
+  lat: number = 1;
+  lng: number = 1  ;
   zoom :number = 1;
   APP_POLLINTERVAL = 2000;//TODO:manage in config
 
-  currentLat: number = 51.678418;
-  currentLong: number = 7.809007;
+  currentLat: number = 1;
+  currentLong: number = 1;
   selectedLocation = {} as ISSLocation;
   location!: ISSLocation;
   zoomedLocation: ISSLocation | undefined;
